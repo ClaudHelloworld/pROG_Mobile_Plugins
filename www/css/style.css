@@ -3,3 +3,9 @@
 button{
   margin-top:20px;
 }
+
+.map{
+  margin-top:20px;
+  width: 100px;
+  height: 300px;
+}
