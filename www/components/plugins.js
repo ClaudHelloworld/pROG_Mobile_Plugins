@@ -4,7 +4,7 @@ $(document).on("click", "#alerta", function(){
 navigator.notification.alert("Minha Mensagem",null,"aviso","aceito");
 });
 
-$(document).on("click", "#alerta", function(){
+$(document).on("click", "#confirm", function(){
   function confirm(buttonIndex){
     if(buttonIndex == 1){
        navigator.notification.alert("Escolheu a opção A");
@@ -32,15 +32,17 @@ function mostramapa(lat, long){
 
         var map = L.mapquest.map('map', {
           center: [lat, long],
-          layers: L.mapquest.tileLayer('map'),
-          zoom: 12
-});
+          layers:L.mapquest.tileLayer('light'),
+          zoom: 14
+    });
 
- map.addControl(L.mapquest.control());}
+    map.addControl(L.mapquest.control());
+ }
 
-$(document).on("click", "#local", function(){
+$(document).on("click", "#geolocal", function(){
  var onSuccess = function(position) {
-   mostramapa(position.coords.latitude,position.coords.longitude) };
+   mostramapa(position.coords.latitude,position.coords.longitude) 
+   };
 
     // onError Callback receives a PositionError object
     //
